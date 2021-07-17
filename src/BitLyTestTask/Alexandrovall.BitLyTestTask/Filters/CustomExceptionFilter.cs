@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Alexandrovall.BitLyTestTask.Filters
 {
-    public class CustomExceptionFilter : IExceptionFilter
+    internal class CustomExceptionFilter : IExceptionFilter
     {
         public void OnException(ExceptionContext context)
         {

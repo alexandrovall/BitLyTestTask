@@ -1,6 +1,8 @@
 using System.Reflection;
 using Alexandrovall.BitLyTestTask.Dto.RS.Common;
+using Alexandrovall.BitLyTestTask.Dto.Validators.RQ;
 using Alexandrovall.BitLyTestTask.Filters;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -36,6 +38,10 @@ namespace Alexandrovall.BitLyTestTask
                     {
                         NamingStrategy = new SnakeCaseNamingStrategy()
                     };
+                }).AddFluentValidation(configuration =>
+                {
+                    configuration.ImplicitlyValidateChildProperties = true;
+                    configuration.RegisterValidatorsFromAssemblyContaining<GetShortLinkListRequestValidator>();
                 });
 
             services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });

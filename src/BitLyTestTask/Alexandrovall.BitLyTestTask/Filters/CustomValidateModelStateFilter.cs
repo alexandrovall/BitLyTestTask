@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Alexandrovall.BitLyTestTask.Filters
 {
-    public class CustomValidateModelStateFilter : ActionFilterAttribute
+    internal class CustomValidateModelStateFilter : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext context)
         {
