@@ -5,11 +5,11 @@ namespace Alexandrovall.BitLyTestTask.Dto.RS
     /// <summary>
     /// Ответ с сокращённой ссылкой
     /// </summary>
-    public class GetShortLinkResponse : Response
+    public class CreateShortLinkResponse : Response<string>
     {
-        /// <summary>
-        /// Сокращённая ссылка
-        /// </summary>
-        public string ShortLink { get; init; }
+        public CreateShortLinkResponse(string data) : base(data)
+        {
+
+        }
     }
 }

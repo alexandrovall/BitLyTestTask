@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 namespace Alexandrovall.BitLyTestTask.Dto.RQ
 {
     /// <summary>
-    /// Запрос на сокращение ссылки
+    /// Запрос на создание сокращённой ссылки
     /// </summary>
-    public class GetShortLinkRequest
+    public class CreateShortLinkRequest
     {
         /// <summary>
         /// Ссылка для сокращения

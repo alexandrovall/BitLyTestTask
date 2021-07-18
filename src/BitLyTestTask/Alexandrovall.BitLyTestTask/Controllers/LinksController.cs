@@ -1,8 +1,11 @@
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Alexandrovall.BitLyTestTask.Dto.RQ;
 using Alexandrovall.BitLyTestTask.Dto.RS;
 using Alexandrovall.BitLyTestTask.Dto.RS.Common;
+using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,17 +19,28 @@ namespace Alexandrovall.BitLyTestTask.Controllers
     [Route("api/links")]
     public class LinksController : ControllerBase
     {
+        private readonly IMediator _mediator;
+        private readonly IMapper _mapper;
+
+        public LinksController(IMediator mediator, IMapper mapper)
+        {
+            _mediator = mediator;
+            _mapper = mapper;
+        }
+
         /// <summary>
-        /// Получение сокращённой ссылки
+        /// Создание сокращённой ссылки
         /// </summary>
-        /// <param name="request">Запрос на получение сокращённой ссылки</param>
+        /// <param name="request">Запрос на создание сокращённой ссылки</param>
         /// <returns>Ответ с сокращённой ссылкой</returns>
         [HttpPost]
-        [ProducesResponseType(typeof(GetShortLinkResponse), 200)]
+        [ProducesResponseType(typeof(CreateShortLinkResponse), 200)]
         [ProducesResponseType(typeof(ErrorResponse), 400)]
-        public Task<GetShortLinkResponse> GetShortLink([FromBody] GetShortLinkRequest request)
+        public async Task<CreateShortLinkResponse> CreateShortLink([FromBody] CreateShortLinkRequest request)
         {
-            throw new NotImplementedException();
+            var mediatrRequest = _mapper.Map<MediatR.Contracts.Requests.CreateShortLinkRequest>(request);
+            var shortLink = await _mediator.Send(mediatrRequest);
+            return new CreateShortLinkResponse(shortLink);
         }
 
         /// <summary>
@@ -35,11 +49,13 @@ namespace Alexandrovall.BitLyTestTask.Controllers
         /// <param name="request">Запрос на получение списка ссылок пользователя</param>
         /// <returns>Ответ со списком сокращённых ссылок</returns>
         [HttpGet]
-        [ProducesResponseType(typeof(GetShortLinkResponse), 200)]
+        [ProducesResponseType(typeof(GetShortLinkListResponse), 200)]
         [ProducesResponseType(typeof(ErrorResponse), 400)]
-        public Task<GetShortLinkListResponse> GetShortLinkList([FromQuery] GetShortLinkListRequest request)
+        public async Task<GetShortLinkListResponse> GetShortLinkList([FromQuery] GetShortLinkListRequest request)
         {
-            throw new NotImplementedException();
+            var mediatrRequest = _mapper.Map<MediatR.Contracts.Requests.GetShortLinkListRequest>(request);
+            var shortLinkList = await _mediator.Send(mediatrRequest);
+            return new GetShortLinkListResponse(shortLinkList.Select(_mapper.Map<Dto.ShortLink>).ToList());
         }
 
         /// <summary>
@@ -48,12 +64,14 @@ namespace Alexandrovall.BitLyTestTask.Controllers
         /// <param name="linkId">Id сокращённой ссылки</param>
         /// <returns>Ответ с оригинальной ссылки</returns>
         [HttpGet("{link_id}")]
-        [ProducesResponseType(typeof(GetShortLinkResponse), 200)]
+        [ProducesResponseType(typeof(GetOriginalLinkResponse), 200)]
         [ProducesResponseType(typeof(ErrorResponse), 400)]
         [ProducesResponseType(typeof(ErrorResponse), 404)]
-        public Task<GetOriginalLinkResponse> GetOriginalLink([FromRoute(Name = "link_id")] Guid linkId)
+        public async Task<GetOriginalLinkResponse> GetOriginalLink([FromRoute(Name = "link_id")] Guid linkId)
         {
-            throw new NotImplementedException();
+            var mediatrRequest = new MediatR.Contracts.Requests.GetOriginalLinkRequest {LinkId = linkId,};
+            var originalLink = await _mediator.Send(mediatrRequest);
+            return new GetOriginalLinkResponse(originalLink);
         }
     }
 }

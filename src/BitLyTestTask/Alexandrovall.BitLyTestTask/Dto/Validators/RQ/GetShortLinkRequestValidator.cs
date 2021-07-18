@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace Alexandrovall.BitLyTestTask.Dto.Validators.RQ
 {
-    public class GetShortLinkRequestValidator : AbstractValidator<GetShortLinkRequest>
+    public class GetShortLinkRequestValidator : AbstractValidator<CreateShortLinkRequest>
     {
         public GetShortLinkRequestValidator()
         {

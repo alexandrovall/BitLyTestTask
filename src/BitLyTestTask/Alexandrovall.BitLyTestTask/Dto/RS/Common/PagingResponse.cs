@@ -12,5 +12,10 @@ namespace Alexandrovall.BitLyTestTask.Dto.RS.Common
         /// Флаг для проверки наличия следующих элементов
         /// </summary>
         public bool HasNext => Data?.Count > 0;
+
+        public PagingResponse(IReadOnlyCollection<T> data) : base(data)
+        {
+
+        }
     }
 }

@@ -1,8 +1,12 @@
 using System.Reflection;
+using Alexandrovall.BitLyTestTask.BL.MediatR.RequestHandlers;
 using Alexandrovall.BitLyTestTask.Dto.RS.Common;
 using Alexandrovall.BitLyTestTask.Dto.Validators.RQ;
 using Alexandrovall.BitLyTestTask.Filters;
+using Alexandrovall.BitLyTestTask.Mapping.Profiles;
+using Alexandrovall.BitLyTestTask.MediatR.Behaviors;
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -55,6 +59,11 @@ namespace Alexandrovall.BitLyTestTask
                     c.IncludeXmlComments(typeof(Response).Assembly.Location.Replace("dll", "xml"));
                 })
                 .AddSwaggerGenNewtonsoftSupport();
+
+            services.AddHttpContextAccessor();
+            services.AddAutoMapper(typeof(CommonProfile));
+            services.AddMediatR(typeof(GetShortLinkListRequestHandler));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FillUserPipelineBehavior<,>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

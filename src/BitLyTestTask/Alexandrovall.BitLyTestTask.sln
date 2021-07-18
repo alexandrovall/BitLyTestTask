@@ -2,6 +2,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexandrovall.BitLyTestTask", "Alexandrovall.BitLyTestTask\Alexandrovall.BitLyTestTask.csproj", "{D644C86B-2D21-47DD-BAC5-A8DE0594D81C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexandrovall.BitLyTestTask.DataAccess.MongoDb", "Alexandrovall.BitLyTestTask.DataAccess.MongoDb\Alexandrovall.BitLyTestTask.DataAccess.MongoDb.csproj", "{E920DCCB-14C8-417B-8CB8-AA6C7E43BE4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexandrovall.BitLyTestTask.MediatR.Contracts", "Alexandrovall.BitLyTestTask.MediatR.Contracts\Alexandrovall.BitLyTestTask.MediatR.Contracts.csproj", "{13D89823-11C6-4958-A180-648D0F31EB78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexandrovall.BitLyTestTask.BL", "Alexandrovall.BitLyTestTask.BL\Alexandrovall.BitLyTestTask.BL.csproj", "{5528C20F-E9F1-478A-8DE1-4D60C09AC1A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alexandrovall.BitLyTestTask.MediatR.Behaviors", "Alexandrovall.BitLyTestTask.MediatR.Behaviors\Alexandrovall.BitLyTestTask.MediatR.Behaviors.csproj", "{209B2F5F-B84C-4A74-A760-496D78759BDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +20,21 @@ Global
 		{D644C86B-2D21-47DD-BAC5-A8DE0594D81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D644C86B-2D21-47DD-BAC5-A8DE0594D81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D644C86B-2D21-47DD-BAC5-A8DE0594D81C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E920DCCB-14C8-417B-8CB8-AA6C7E43BE4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E920DCCB-14C8-417B-8CB8-AA6C7E43BE4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E920DCCB-14C8-417B-8CB8-AA6C7E43BE4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E920DCCB-14C8-417B-8CB8-AA6C7E43BE4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13D89823-11C6-4958-A180-648D0F31EB78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D89823-11C6-4958-A180-648D0F31EB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13D89823-11C6-4958-A180-648D0F31EB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13D89823-11C6-4958-A180-648D0F31EB78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5528C20F-E9F1-478A-8DE1-4D60C09AC1A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5528C20F-E9F1-478A-8DE1-4D60C09AC1A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5528C20F-E9F1-478A-8DE1-4D60C09AC1A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5528C20F-E9F1-478A-8DE1-4D60C09AC1A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{209B2F5F-B84C-4A74-A760-496D78759BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{209B2F5F-B84C-4A74-A760-496D78759BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{209B2F5F-B84C-4A74-A760-496D78759BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{209B2F5F-B84C-4A74-A760-496D78759BDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

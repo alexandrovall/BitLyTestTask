@@ -19,6 +19,11 @@ namespace Alexandrovall.BitLyTestTask.Dto.RS.Common
         /// <summary>
         /// Тело ответа
         /// </summary>
-        public T Data { get; init; }
+        public T Data { get; }
+
+        public Response(T data)
+        {
+            Data = data;
+        }
     }
 }

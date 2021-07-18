@@ -7,6 +7,9 @@ namespace Alexandrovall.BitLyTestTask.Dto.RS
     /// </summary>
     public class GetOriginalLinkResponse : Response<string>
     {
-        
+        public GetOriginalLinkResponse(string data) : base(data)
+        {
+            
+        }
     }
 }
