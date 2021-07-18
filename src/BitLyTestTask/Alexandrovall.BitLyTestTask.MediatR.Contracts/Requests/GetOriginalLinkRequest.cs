@@ -12,6 +12,6 @@ namespace Alexandrovall.BitLyTestTask.MediatR.Contracts.Requests
         /// <summary>
         /// Id сокращённой ссылки
         /// </summary>
-        public Guid LinkId { get; set; }
+        public string LinkId { get; set; }
     }
 }

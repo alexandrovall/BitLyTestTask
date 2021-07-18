@@ -5,10 +5,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="10.1.1" />
       <PackageReference Include="MediatR" Version="9.0.0" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Alexandrovall.BitLyTestTask.DataAccess.MongoDb\Alexandrovall.BitLyTestTask.DataAccess.MongoDb.csproj" />
+      <ProjectReference Include="..\Alexandrovall.BitLyTestTask.Exceptions\Alexandrovall.BitLyTestTask.Exceptions.csproj" />
       <ProjectReference Include="..\Alexandrovall.BitLyTestTask.MediatR.Contracts\Alexandrovall.BitLyTestTask.MediatR.Contracts.csproj" />
     </ItemGroup>
 

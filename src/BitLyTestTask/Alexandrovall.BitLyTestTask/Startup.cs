@@ -1,5 +1,7 @@
 using System.Reflection;
+using Alexandrovall.BitLyTestTask.BL.Mapping;
 using Alexandrovall.BitLyTestTask.BL.MediatR.RequestHandlers;
+using Alexandrovall.BitLyTestTask.DataAccess.MongoDb.Extensions;
 using Alexandrovall.BitLyTestTask.Dto.RS.Common;
 using Alexandrovall.BitLyTestTask.Dto.Validators.RQ;
 using Alexandrovall.BitLyTestTask.Filters;
@@ -60,8 +62,9 @@ namespace Alexandrovall.BitLyTestTask
                 })
                 .AddSwaggerGenNewtonsoftSupport();
 
+            services.AddMongoDb(Configuration.GetConnectionString("MongoDb"), "bitlyTestTaskDb");
             services.AddHttpContextAccessor();
-            services.AddAutoMapper(typeof(CommonProfile));
+            services.AddAutoMapper(typeof(CommonProfile), typeof(MongoDbToMediatrProfile));
             services.AddMediatR(typeof(GetShortLinkListRequestHandler));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FillUserPipelineBehavior<,>));
         }

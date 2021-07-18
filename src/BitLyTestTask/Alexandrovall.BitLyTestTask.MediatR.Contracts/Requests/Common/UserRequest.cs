@@ -10,6 +10,6 @@ namespace Alexandrovall.BitLyTestTask.MediatR.Contracts.Requests.Common
         /// <summary>
         /// Id пользователя
         /// </summary>
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

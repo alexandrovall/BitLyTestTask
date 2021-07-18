@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Alexandrovall.BitLyTestTask.Dto.RQ;
@@ -55,7 +54,7 @@ namespace Alexandrovall.BitLyTestTask.Controllers
         {
             var mediatrRequest = _mapper.Map<MediatR.Contracts.Requests.GetShortLinkListRequest>(request);
             var shortLinkList = await _mediator.Send(mediatrRequest);
-            return new GetShortLinkListResponse(shortLinkList.Select(_mapper.Map<Dto.ShortLink>).ToList());
+            return new GetShortLinkListResponse(shortLinkList.Select(l => _mapper.Map<Dto.ShortLink>(l)).ToList());
         }
 
         /// <summary>
@@ -67,7 +66,7 @@ namespace Alexandrovall.BitLyTestTask.Controllers
         [ProducesResponseType(typeof(GetOriginalLinkResponse), 200)]
         [ProducesResponseType(typeof(ErrorResponse), 400)]
         [ProducesResponseType(typeof(ErrorResponse), 404)]
-        public async Task<GetOriginalLinkResponse> GetOriginalLink([FromRoute(Name = "link_id")] Guid linkId)
+        public async Task<GetOriginalLinkResponse> GetOriginalLink([FromRoute(Name = "link_id")] string linkId)
         {
             var mediatrRequest = new MediatR.Contracts.Requests.GetOriginalLinkRequest {LinkId = linkId,};
             var originalLink = await _mediator.Send(mediatrRequest);

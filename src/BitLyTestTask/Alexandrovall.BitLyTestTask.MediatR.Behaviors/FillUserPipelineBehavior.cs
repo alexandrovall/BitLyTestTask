@@ -27,16 +27,15 @@ namespace Alexandrovall.BitLyTestTask.MediatR.Behaviors
 
         private async Task<TResponse> FillUser(UserRequest userRequest, RequestHandlerDelegate<TResponse> next)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies.TryGetValue(UserIdCookieName, out var userIdString) &&
-                Guid.TryParseExact(userIdString, "N", out var userId))
+            if (_httpContextAccessor.HttpContext.Request.Cookies.TryGetValue(UserIdCookieName, out var userId))
             {
                 userRequest.UserId = userId;
                 return await next();
             }
 
-            userRequest.UserId = Guid.NewGuid();
+            userRequest.UserId = Guid.NewGuid().ToString("N");
 
-            _httpContextAccessor.HttpContext.Response.Cookies.Append(UserIdCookieName, userRequest.UserId.ToString("N"));
+            _httpContextAccessor.HttpContext.Response.Cookies.Append(UserIdCookieName, userRequest.UserId);
 
             return await next();
         }
