@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alexandrovall.BitLyTestTask", "Alexandrovall.BitLyTestTask\Alexandrovall.BitLyTestTask.csproj", "{D644C86B-2D21-47DD-BAC5-A8DE0594D81C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alexandrovall.BitLyTestTask.DataAccess.MongoDb", "Alexandrovall.BitLyTestTask.DataAccess.MongoDb\Alexandrovall.BitLyTestTask.DataAccess.MongoDb.csproj", "{E920DCCB-14C8-417B-8CB8-AA6C7E43BE4E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alexandrovall.BitLyTestTask.MediatR.Contracts", "Alexandrovall.BitLyTestTask.MediatR.Contracts\Alexandrovall.BitLyTestTask.MediatR.Contracts.csproj", "{13D89823-11C6-4958-A180-648D0F31EB78}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alexandrovall.BitLyTestTask.BL", "Alexandrovall.BitLyTestTask.BL\Alexandrovall.BitLyTestTask.BL.csproj", "{5528C20F-E9F1-478A-8DE1-4D60C09AC1A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alexandrovall.BitLyTestTask.MediatR.Behaviors", "Alexandrovall.BitLyTestTask.MediatR.Behaviors\Alexandrovall.BitLyTestTask.MediatR.Behaviors.csproj", "{209B2F5F-B84C-4A74-A760-496D78759BDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alexandrovall.BitLyTestTask.Exceptions", "Alexandrovall.BitLyTestTask.Exceptions\Alexandrovall.BitLyTestTask.Exceptions.csproj", "{8BC1BD59-3825-422D-BEC5-D0CAFED36DFC}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0FFA8702-9770-458F-897B-E3FF732AF238}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D644C86B-2D21-47DD-BAC5-A8DE0594D81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D644C86B-2D21-47DD-BAC5-A8DE0594D81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D644C86B-2D21-47DD-BAC5-A8DE0594D81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D644C86B-2D21-47DD-BAC5-A8DE0594D81C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E920DCCB-14C8-417B-8CB8-AA6C7E43BE4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E920DCCB-14C8-417B-8CB8-AA6C7E43BE4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E920DCCB-14C8-417B-8CB8-AA6C7E43BE4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E920DCCB-14C8-417B-8CB8-AA6C7E43BE4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13D89823-11C6-4958-A180-648D0F31EB78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13D89823-11C6-4958-A180-648D0F31EB78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13D89823-11C6-4958-A180-648D0F31EB78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13D89823-11C6-4958-A180-648D0F31EB78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5528C20F-E9F1-478A-8DE1-4D60C09AC1A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5528C20F-E9F1-478A-8DE1-4D60C09AC1A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5528C20F-E9F1-478A-8DE1-4D60C09AC1A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5528C20F-E9F1-478A-8DE1-4D60C09AC1A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{209B2F5F-B84C-4A74-A760-496D78759BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{209B2F5F-B84C-4A74-A760-496D78759BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{209B2F5F-B84C-4A74-A760-496D78759BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{209B2F5F-B84C-4A74-A760-496D78759BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC1BD59-3825-422D-BEC5-D0CAFED36DFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC1BD59-3825-422D-BEC5-D0CAFED36DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC1BD59-3825-422D-BEC5-D0CAFED36DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC1BD59-3825-422D-BEC5-D0CAFED36DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FFA8702-9770-458F-897B-E3FF732AF238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FFA8702-9770-458F-897B-E3FF732AF238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FFA8702-9770-458F-897B-E3FF732AF238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FFA8702-9770-458F-897B-E3FF732AF238}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B579D30-1CE6-48D8-9EC3-79B17B488525}
+	EndGlobalSection
+EndGlobal
